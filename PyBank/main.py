@@ -15,20 +15,31 @@ with open(csvpath, newline = '') as csvfile:
     totalMonths = 0
     netProfitLossTotal = 0.00
     avgProfitLossChanges = 0.00
+    avgProfitLossTotal = 0.00
     greatestIncrease = 0.00
     greatestDecrease = 0.00
     itemList = []
     dateList = []
     
-    # Loop through the csv file to get the months list, dates list, total months, and net profit & loss numbers
+    # Loop through the csv file to get the months list, dates list, total months, and total profit & loss numbers
     for row in csvreader:
         totalMonths = totalMonths + 1
         netProfitLossTotal = netProfitLossTotal + float(row[1])
         itemList.append(float(row[1]))
         dateList.append(row[0])
-
-    # Calculate the average change in profits/losses
-    avgProfitLossChanges = netProfitLossTotal/totalMonths
+    
+    # Loop through to calculate the net change of profit/loss numbers to get the average net change
+    # The change in price will be next month's price minus the current price. Add up all these changes
+    # and take the average of these changes.
+    itemNbr = 0
+    for item in itemList:
+        if itemNbr < totalMonths-1:
+          avgProfitLossChange = itemList[itemNbr+1] - itemList[itemNbr]
+          itemNbr = itemNbr + 1
+          avgProfitLossTotal = avgProfitLossTotal + avgProfitLossChange
+    
+        # Calculate the average change in profits/losses
+    avgProfitLossChanges = avgProfitLossTotal/(totalMonths-1)
 
     # Calculate the greatest increase in profits
     greatestIncrease = max(itemList)

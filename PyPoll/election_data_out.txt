@@ -2,16 +2,16 @@ Election Results
 ----------------------------
 The list of candidates:
 ----------------------------
-Tim Correy
-Greg O' Tooley
-Hu Li
-Aga Khan
+Khan
+Correy
+O'Tooley
+Li
 ----------------------------
-Total Votes: 12
+Total Votes: 3521001
 ----------------------------
-Aga Khan:16.67% (2)
-Tim Correy:33.33% (4)
-Hu Li:25.0% (3)
-Greg O' Tooley:25.0% (3)
+Khan:63.0% (2218231)
+Correy:20.0% (704200)
+Li:14.0% (492940)
+O'Tooley:3.0% (105630)
 ----------------------------
-Winner: Tim Correy
+Winner: Khan

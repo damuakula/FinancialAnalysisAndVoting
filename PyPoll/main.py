@@ -22,6 +22,7 @@ with open(csvpath, newline = '') as csvfile:
     candidateList = []
     candidatesGroup = {}
     
+    # Create a candidate group list with candidate keys and votes as values for each candidate
     candidatesGroup = collections.defaultdict(list)
     # Loop through the csv file to get the total votes, candidate list
     for row in csvreader:
